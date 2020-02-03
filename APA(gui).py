@@ -349,6 +349,7 @@ class Generator(tk.Frame):
     
     #---start here where the create button starts getting the author or group entries------------------------------------------------------------------------------------------------------    
     def start(self):
+        """Starts getting the authors first before proceeding to the next"""
         global Firstn
         global auth
         self.chck = self.reg_or_corp_var.get()
