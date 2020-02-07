@@ -31,12 +31,12 @@ class Generator(tk.Frame):
         
     def gui(self):
         """
-        Here the widgets of generator GUI are defined:
+        This method contains the widgets of generator GUI and also has the variables, lists and loops:
         
         *Menu Bar
             -File
             -Help
-        *Enter details here frame
+        *'Enter details here' frame
             -Author frame
                 >Author only radiobutton
                 >Author count messagebox
@@ -71,6 +71,14 @@ class Generator(tk.Frame):
                 >URL entry
             -'APA' label
             -Create button
+        *'Editable result (no indents)' frame
+            -editable result text box
+            -Confirm button
+            -Discard button
+        *'Final result' frame
+            -final result text box
+            -add another citation button
+            -clear all button
         """
         
         self.menubar = Menu(self.master)
