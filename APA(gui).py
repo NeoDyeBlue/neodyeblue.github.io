@@ -30,7 +30,48 @@ class Generator(tk.Frame):
         self.gui()
         
     def gui(self):
-        """Here the widgets of generator GUI are defined"""
+        """
+        Here the widgets of generator GUI are defined:
+        
+        *Menu Bar
+            -File
+            -Help
+        *Enter details here frame
+            -Author frame
+                >Author only radiobutton
+                >Author count messagebox
+                >'First:' label
+                >First name entry
+                >'M./M.I.:' label
+                >Middle initial entry
+                >'Last' label
+                >Last name entry
+                >Add author button
+            -Corporate or Group of authors frame
+                >Corporate or Group only radiobutton
+                >Corporate or Group of authors entry
+            -Publishing Date frame
+                >'Month' label
+                >Month dropdown menu
+                >'Day' label
+                >Day dropdown menu
+                >'Year' label
+                >Year dropdown menu
+            -Retrieval Date frame
+                >'Month' label
+                >Month dropdown menu
+                >'Day' label
+                >Day dropdown menu
+                >'Year' label
+                >Year dropdown menu
+            -Title & URL frame
+                >'Title/Website' entry
+                >Title/Website name entry
+                >'URL' label
+                >URL entry
+            -'APA' label
+            -Create button
+        """
         
         self.menubar = Menu(self.master)
         self.fmenu = Menu(self.menubar, tearoff=0)
@@ -90,7 +131,7 @@ class Generator(tk.Frame):
         self.add_a.place(x = 337, y =41)
 
         self.corp_or_grp = LabelFrame(self.labelframe, height = 42, width = 217).place(x=354,y=8)
-        self.cg_rb = Radiobutton(self.corp_or_grp, text = "Corporate or Group author", font = ('impact', 8),variable = self.reg_or_corp_var, value = "group", command = self.lock, state = 'normal')
+        self.cg_rb = Radiobutton(self.corp_or_grp, text = "Corporate or Group of authors", font = ('impact', 8),variable = self.reg_or_corp_var, value = "group", command = self.lock, state = 'normal')
         self.cg_rb.place(x = 365, y = 20)
         self.cg_ent = Entry(self.corp_or_grp, width = 33, state = 'disabled')
         self.cg_ent.place(x = 368, y = 45)
@@ -180,9 +221,10 @@ class Generator(tk.Frame):
         self.clear_b = Button(self.finalframe, text = "Clear all", activebackground = 'gray', width = 38, state = 'disabled', command = self.clear_all)
         self.clear_b.place(x = 300, y = 633)
 
+    #help and about-GUI----------------------------------------------------------------------------------------------------------------------------------------------------------------
     def hlp(self):
         """Here the help and about widgets are defined"""
-        #help and about-GUI----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
         self.menubar.entryconfig("Help", state = 'disabled')
         self.menubar.entryconfig("File", state = 'disabled')
         self.hlpframe = LabelFrame(self.master, text = "Help & About", font = ('impact', 10), width = 580, height = 662)
@@ -231,7 +273,7 @@ class Generator(tk.Frame):
         self.ok = Button(self.hlpframe, text = "Okay ⌐■_■",activebackground = 'gray', command = self.hlpframeclear, width = 79, height = 3)
         self.ok.place(x = 6, y = 575)
 
-    #---okay button function---------------------------------------------------------------------------------------------------------------------------------------------------------------   
+    #---Okay ⌐■_■ button function---------------------------------------------------------------------------------------------------------------------------------------------------------------   
     def hlpframeclear(self):
         """returns the file and help to normal state then forgets the help frame widget"""
         
