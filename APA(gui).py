@@ -585,7 +585,7 @@ class Generator(tk.Frame):
         global ac
         
         self.ed_result.delete('1.0', END)
-        self.tobeenabled = [self.author_f_ent, self.author_m_ent, self.author_l_ent, self.title_ent, self.url_ent, self.auth_rb, self.cg_rb, self.citate, self.mp, self.dp, self.yp, self.mr, self.dr, self.yr]
+        self.tobeenabled = [self.cg_ent, self.author_f_ent, self.author_m_ent, self.author_l_ent, self.title_ent, self.url_ent, self.auth_rb, self.cg_rb, self.citate, self.mp, self.dp, self.yp, self.mr, self.dr, self.yr]
         for ena in self.tobeenabled:
             ena.configure(state = 'normal')
             
@@ -593,6 +593,8 @@ class Generator(tk.Frame):
             
         for cle in self.clearedentry:
             cle.delete(0, END)
+        
+        self.cg_ent.configure(state = 'disabled')
         
         self.mp_var.set(self.Months[0])
         self.dp_var.set(self.Days[0])
@@ -689,7 +691,7 @@ class Generator(tk.Frame):
             self.finalresult.delete('1.0', END)
             self.finalresult.configure(state = 'disabled')
             self.ed_result.configure(state = 'disabled')
-            self.tobeenabled = [self.author_f_ent, self.author_m_ent, self.author_l_ent, self.title_ent, self.url_ent, self.auth_rb, self.cg_rb, self.citate, self.mp, self.dp, self.yp, self.mr, self.dr, self.yr]
+            self.tobeenabled = [self.cg_ent, self.author_f_ent, self.author_m_ent, self.author_l_ent, self.title_ent, self.url_ent, self.auth_rb, self.cg_rb, self.citate, self.mp, self.dp, self.yp, self.mr, self.dr, self.yr]
             for ena in self.tobeenabled:
                 ena.configure(state = 'normal')
             
@@ -697,6 +699,8 @@ class Generator(tk.Frame):
             
             for cle in self.clearedentry:
                 cle.delete(0, END)
+                
+            self.cg_ent.configure(state = 'disabled)
         
             self.mp_var.set(self.Months[0])
             self.dp_var.set(self.Days[0])
