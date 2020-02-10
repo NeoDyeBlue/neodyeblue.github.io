@@ -700,7 +700,7 @@ class Generator(tk.Frame):
             for cle in self.clearedentry:
                 cle.delete(0, END)
                 
-            self.cg_ent.configure(state = 'disabled)
+            self.cg_ent.configure(state = 'disabled')
         
             self.mp_var.set(self.Months[0])
             self.dp_var.set(self.Days[0])
